@@ -1,0 +1,86 @@
+[
+  {
+    "category": "",
+    "embedLink": "https://res.cloudinary.com/learncube/image/upload/v1634126544/LearnCube%20Online%20Classes/pnwhgouqauyad84bykeu.pdf",
+    "contentType": "PDF",
+    "title": "Table of Contents",
+    "language": "English",
+    "description": "Table of contents for upcoming lessons",
+    "level": "A1",
+    "subType": "PDF",
+    "thumbnail": "https://res.cloudinary.com/learncube/image/fetch/w_800,h_400,c_limit,f_jpg,q_auto/https://res.cloudinary.com/learncube/image/upload/v1634126544/LearnCube%20Online%20Classes/pnwhgouqauyad84bykeu.pdf",
+    "uuid": 241
+  },
+  {
+    "category": "Meditation",
+    "embedLink": "https://res.cloudinary.com/learncube/video/upload/v1634126544/LearnCube%20Online%20Classes/lm5z8vrahifbu6bgyyrv.mp3",
+    "contentType": "audio",
+    "title": "Sample Audio",
+    "language": "English",
+    "description": "Some soothing meditation sounds",
+    "level": "",
+    "subType": "Audio (MP3)",
+    "thumbnail": "",
+    "uuid": 249
+  },
+  {
+    "category": "Meditation",
+    "embedLink": "https://res.cloudinary.com/learncube/video/upload/v1634126545/LearnCube%20Online%20Classes/ncsnarxjj94oqz1j4um8.mp4",
+    "contentType": "video",
+    "title": "Spinning World",
+    "language": "",
+    "description": "",
+    "level": "",
+    "subType": "Video (M4V or MP4)",
+    "thumbnail": "https://res.cloudinary.com/learncube/video/upload/v1634126545/LearnCube%20Online%20Classes/ncsnarxjj94oqz1j4um8.jpg",
+    "uuid": 246
+  },
+  {
+    "category": "",
+    "embedLink": "https://res.cloudinary.com/learncube/image/upload/v1634127692/LearnCube%20Online%20Classes/mmnpnltpw733809drapd.jpg",
+    "contentType": "image",
+    "title": "Conjugation Tables",
+    "language": "",
+    "description": "",
+    "level": "",
+    "subType": "Image",
+    "thumbnail": "https://res.cloudinary.com/learncube/image/fetch/w_800,h_400,c_limit,f_jpg,q_auto/https://res.cloudinary.com/learncube/image/upload/v1634127692/LearnCube%20Online%20Classes/mmnpnltpw733809drapd.jpg",
+    "uuid": 579
+  },
+  {
+    "category": "Instructional",
+    "embedLink": "https://www.youtube.com/watch?v=zc_IYHeCGL8",
+    "contentType": "youtube",
+    "title": "LearnCube's Content Library ",
+    "language": "English",
+    "description": "",
+    "level": "",
+    "subType": "YouTube",
+    "thumbnail": "https://res.cloudinary.com/learncube/image/youtube/w_400,h_250,c_fill,q_auto/zc_IYHeCGL8.jpg",
+    "uuid": 240
+  },
+  {
+    "category": "",
+    "embedLink": "https://res.cloudinary.com/learncube/image/upload/v1631709958/LearnCube/cwgowskamvs6hog6oqgi.pptx.pdf",
+    "contentType": "PDF",
+    "title": "MakeAnimated PowerPoint Slide by PowerPoint School",
+    "language": "",
+    "description": "",
+    "level": "",
+    "subType": "MS Office (Word/Excel/PowerPoint)",
+    "thumbnail": "https://res.cloudinary.com/learncube/image/fetch/w_800,h_400,c_limit,f_jpg,q_auto/https://res.cloudinary.com/learncube/image/upload/v1631709958/LearnCube/cwgowskamvs6hog6oqgi.pptx.pdf",
+    "uuid": 619
+  },
+  {
+    "category": "",
+    "embedLink": "https://docs.google.com/document/d/1NH4C5pjxPtg26UOPr7gT6fO70blArvHo9-fYoWEkHOI/edit",
+    "contentType": "embedlink",
+    "title": "Public Google Doc",
+    "language": "",
+    "description": "",
+    "level": "",
+    "subType": "Google Drive Link",
+    "thumbnail": null,
+    "uuid": 619
+  }
+]
