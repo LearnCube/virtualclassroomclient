@@ -104,4 +104,10 @@ On the [JWT website](https://jwt.io/#debugger), there is a handy debugger where 
 
 <img src="https://res.cloudinary.com/learncube/image/upload/v1634897014/LearnCube%20Online%20Classes/ba7udbzfghkmsiaqu4jd.png" />
 
-If you continue to have problems contact LearnCube Support.
+If you continue to have problems, please contact LearnCube Support by [email](mailto:support@learncube.com) or [chat](https://app.learncube.com/). Please provide information like:
+* a paste or screenshot of any error messages
+* your username
+* the room token
+* your public key
+* config files
+* any other information (OS, browser, troubleshooting attempts etc)
