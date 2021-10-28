@@ -56,7 +56,7 @@ LearnCube's Virtual Classroom is only available to LearnCube customers with API 
   privateKey={privatekeyfromyouraccount}
 
   # LearnCube user username
-  username={usernamefromyouraccount}
+  user_name={usernamefromyouraccount}
 
   # LearnCube user id
   user_id={useridfromyouraccount}
