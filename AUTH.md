@@ -48,7 +48,7 @@ The ***Payload*** consists of user data corresponding to the LearnCube API Users
   "exp": 1626254079
 }
 ```
-The ***Signature*** is the consists of the header and payload, encrypted with your Learcube Private Key using the algorithm contained in the header.
+The ***Signature*** consists of the header and payload, encrypted with your Learcube Private Key using the algorithm contained in the header.
 
 The end result is three Base64-URL strings separated by dots. The HTTP response from your auth endpoint must have a 200 status code and return the token in a valid JSON object with `token` as the key.
 
