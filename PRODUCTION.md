@@ -169,7 +169,9 @@ const classConfig = {
   'settings.show_class_feedback': true,
   'settings.class_control_button': true,
   'whiteboard.enable_math_tools': true,
-  'whiteboard.can_edit_all': true
+  'whiteboard.can_edit_all': true, 
+  'styles.logo': 'https://static.learncube.net/images/logos/crm/marije-test_live-online-classes_com/logo.png',
+  'styles.primary_color': '#fff000',
 }
 ```
 *** Important: These values all have permanent settings that are saved in your account. The front-end configuration is a way to overwrite the saved configuration.
@@ -186,6 +188,8 @@ settings.show_class_feedback | boolean | no | true | Shows the class feedback fo
 settings.class_control_button | boolean | no | false | Shows a button to start / end the class instead of the standard dropdown. |
 whiteboard.enable_math_tools | boolean | no | false | Enables maths tools to use on the whiteboard. |
 whiteboard.can_edit_all | boolean | no | true | Enables user to edit all annotations on the whiteboard.|
+styles.logo | string | no | null | Set the logo in the classroom.|
+styles.primary_color | string | no | null | Set the primary colour in the classroom.|
 
 #### Events
 Name | Triggered By | Example Payload | 
@@ -194,6 +198,7 @@ enterClass | Entering a classroom | `{user: {userid: "12345G"}, timestamp: 16294
 exitClass | Exiting a classroom | `{user: {userid: "12345G"}, timestamp: 1629448350461}` 
 updateClassStatus | Exiting a classroom | `{classStatus: "in-progress", timestamp: 1629448350461}`  
 enterBreakoutRoom | Clicking link to enter a Breakout Room | `{token: 'breakout-token', userid: "12345G", timestamp: 1629449473109}`
+apiConfigError | Authentication denied when generating the JWT | `{code: 500, message: 'some error message', timestamp: 1637776005425}`
 
 #### Triggers
 Name | Example Payload | 

@@ -15,22 +15,29 @@ router.get('/', function (req, res) {
 
 router.post('/get-valid-token/', function (req, res) {
 
+	const validUser = true
 	// If user is valid and logged in, return the jwt with your learncube user details
+	if (validUser) {
+		const privateKey = process.env.privateKey || 'set private key in the .env file'
+		const user_name = process.env.user_name || 'set user_name in .env file'
+		const user_id = process.env.user_id || 'set user_id in .env file'
+		const email = process.env.email || 'set email in .env file'
 
-	const privateKey = process.env.privateKey || 'set private key in the .env file'
-	const user_name = process.env.user_name || 'set user_name in .env file'
-	const user_id = process.env.user_id || 'set user_id in .env file'
-	const email = process.env.email || 'set email in .env file'
+		const token = jwt.sign({
+			"exp": Math.floor(Date.now() / 1000) + (60 * 5),
+			"username": user_name,
+			"user_id": user_id,
+			"email": email,
+		}, privateKey, { algorithm: 'HS256' })
 
-	const token = jwt.sign({
-		"exp": Math.floor(Date.now() / 1000) + (60 * 5),
-		"username": user_name,
-		"user_id": user_id,
-		"email": email,
-	}, privateKey, { algorithm: 'HS256' })
+		res.setHeader('Content-Type', 'application/json')
+		res.end(JSON.stringify({ 'token': token }))
+	} else {
+		// If validation fails, return the appropriate error
+		res.status(403);
+		res.end(JSON.stringify({ 'message': 'You are not allowed to access this class.' }))
+	}
 
-	res.setHeader('Content-Type', 'application/json')
-	res.end(JSON.stringify({ 'token': token }))
 });
 
 router.get('/content-library/', function (req, res) {
