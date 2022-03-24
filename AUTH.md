@@ -17,8 +17,15 @@
 
 [comment]: <> (  * [Participants]&#40;RESTAPI.md#participants&#41;)
 
+### [RECORDINGS](RECORDINGS.md)
+  * [Overview](RECORDINGS.md#overview)
+
+### [HOMEWORK](HOMEWORK.md)
+  * [Overview](HOMEWORK.md#overview)
+
 ### [Content Library](LIBRARY.md)
   * [Custom Content Library](LIBRARY.md#custom-content-library)
+
 
 
 ## Authentication
@@ -48,7 +55,7 @@ The ***Payload*** consists of user data corresponding to the LearnCube API Users
   "exp": 1626254079
 }
 ```
-The ***Signature*** consists of the header and payload, encrypted with your Learcube Private Key using the algorithm contained in the header.
+The ***Signature*** is the consists of the header and payload, encrypted with your Learcube Private Key using the algorithm contained in the header.
 
 The end result is three Base64-URL strings separated by dots. The HTTP response from your auth endpoint must have a 200 status code and return the token in a valid JSON object with `token` as the key.
 
@@ -104,10 +111,4 @@ On the [JWT website](https://jwt.io/#debugger), there is a handy debugger where 
 
 <img src="https://res.cloudinary.com/learncube/image/upload/v1634897014/LearnCube%20Online%20Classes/ba7udbzfghkmsiaqu4jd.png" />
 
-If you continue to have problems, please contact LearnCube Support by [email](mailto:support@learncube.com) or [chat](https://app.learncube.com/). Please provide information like:
-* a paste or screenshot of any error messages
-* your username
-* the room token
-* your public key
-* config files
-* any other information (OS, browser, troubleshooting attempts etc)
+If you continue to have problems contact LearnCube Support.

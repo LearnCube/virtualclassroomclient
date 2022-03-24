@@ -11,9 +11,17 @@
   * [Breakout Rooms](PRODUCTION.md#breakout-rooms)
   * [Client Api Reference](PRODUCTION.md#api-reference)
 
-### [Rest Api](RESTAPI.md)
-  * [Classrooms](RESTAPI.md#classrooms)
-  * [Participants](RESTAPI.md#participants)
+[comment]: <> (### [Rest Api]&#40;RESTAPI.md&#41;)
+
+[comment]: <> (  * [Classrooms]&#40;RESTAPI.md#classrooms&#41;)
+
+[comment]: <> (  * [Participants]&#40;RESTAPI.md#participants&#41;)
+
+### [RECORDINGS](RECORDINGS.md)
+  * [Overview](RECORDINGS.md#overview)
+
+### [HOMEWORK](HOMEWORK.md)
+  * [Overview](HOMEWORK.md#overview)
 
 ### [Content Library](LIBRARY.md)
   * [Custom Content Library](LIBRARY.md#custom-content-library)

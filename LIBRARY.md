@@ -11,14 +11,21 @@
   * [Breakout Rooms](PRODUCTION.md#breakout-rooms)
   * [Client Api Reference](PRODUCTION.md#api-reference)
 
-[comment]: <> (### [Rest API]&#40;RESTAPI.md&#41;)
+[comment]: <> (### [Rest Api]&#40;RESTAPI.md&#41;)
 
 [comment]: <> (  * [Classrooms]&#40;RESTAPI.md#classrooms&#41;)
 
 [comment]: <> (  * [Participants]&#40;RESTAPI.md#participants&#41;)
 
+### [RECORDINGS](RECORDINGS.md)
+  * [Overview](RECORDINGS.md#overview)
+
+### [HOMEWORK](HOMEWORK.md)
+  * [Overview](HOMEWORK.md#overview)
+
 ### [Content Library](LIBRARY.md)
   * [Custom Content Library](LIBRARY.md#custom-content-library)
+
 
 ### Overview
 The LearnCube Virtual Classroom comes with a built-in content library to host, tag, categorise and search all your teaching resources. 
@@ -44,7 +51,8 @@ An array of content library objects is returned from the server and the Lesson M
     "level": "A1",
     "subType": "PDF",
     "thumbnail": "https://res.cloudinary.com/LearnCube/image/fetch/w_800,h_400,c_limit,f_jpg,q_auto/https://res.cloudinary.com/learncube/image/upload/v1543421928/LearnCube/tyqn34bosmp3u5qwpuu3.pdf",
-    "fileId": 241
+    "uuid": 241,
+    "premium": false
   },
   {
     "category": "",
@@ -57,7 +65,8 @@ An array of content library objects is returned from the server and the Lesson M
     "subType": "MS Office (Word/Excel/PowerPoint)",
     "lesson_number": null,
     "thumbnail": "https://res.cloudinary.com/learncube/image/fetch/w_800,h_400,c_limit,f_jpg,q_auto/https://res.cloudinary.com/learncube/image/upload/v1631709958/LearnCube/cwgowskamvs6hog6oqgi.pptx.pdf",
-    "fileId": 619
+    "uuid": 619,
+    "premium": true
   }
 ]
 ```
@@ -82,10 +91,11 @@ const userConfig = {
 }
 
 const classConfig = {
-    'lesson_materials.library_url': 'http://localhost:3000/content-library/'
+    'lesson_materials.library_url': 'http://localhost:3000/content-library/',
+    'lesson_materials.premium_url': 'http://localhost:3000/content-library/premium/'
 }
 
-const classroomElement = new VirtualClassroomClient(el, userConfig, classConfig)
+const classroom = new VirtualClassroomClient(el, userConfig, classConfig)
 ```
 
 ### Important
@@ -93,6 +103,10 @@ const classroomElement = new VirtualClassroomClient(el, userConfig, classConfig)
 - Each participant must have permission to view the resources added to the whiteboard.
 - There is no option to upload to an external library from within the classroom. Any files uploaded during a class will be stored to the LearnCube Content Library.
 
+
+### Premium Content
+Some content might not be freely available over the web, but it must be accessible to all students in order to be used in the classroom. Protected files can be flagged with the `premium` property. 
+If a `premium` file is loaded into the whiteboard, a POST request is sent to a premium url, defined by you in the class config. This request should return the true, signed url of the file with which, is subsequently loaded into the whiteboard.
 
 ### API Reference
 

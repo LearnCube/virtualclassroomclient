@@ -9,11 +9,12 @@
     "level": "A1",
     "subType": "PDF",
     "thumbnail": "https://res.cloudinary.com/learncube/image/fetch/w_800,h_400,c_limit,f_jpg,q_auto/https://res.cloudinary.com/learncube/image/upload/v1634126544/LearnCube%20Online%20Classes/pnwhgouqauyad84bykeu.pdf",
-    "uuid": 241
+    "uuid": 241,
+    "premium": false
   },
   {
     "category": "Meditation",
-    "embedLink": "https://res.cloudinary.com/learncube/video/upload/v1634126544/LearnCube%20Online%20Classes/lm5z8vrahifbu6bgyyrv.mp3",
+    "embedLink": "https://res.cloudinary.com/learncube/video/upload/LearnCube%20Online%20Classes/lm5z8vrahifbu6bgyyrv.mp3",
     "contentType": "audio",
     "title": "Sample Audio",
     "language": "English",
@@ -21,19 +22,34 @@
     "level": "",
     "subType": "Audio (MP3)",
     "thumbnail": "",
-    "uuid": 249
+    "uuid": 249,
+    "premium": false
   },
   {
-    "category": "Meditation",
-    "embedLink": "https://res.cloudinary.com/learncube/video/upload/v1634126545/LearnCube%20Online%20Classes/ncsnarxjj94oqz1j4um8.mp4",
+    "category": "Games",
+    "embedLink": "https://res.cloudinary.com/learncube/video/upload/EU%20DEV/oy8a8bfv11smznbuug14.mp4",
+    "contentType": "audio",
+    "title": "Movie Sounds",
+    "language": "English",
+    "description": "Guess the movie or tv show",
+    "level": "",
+    "subType": "Audio (MP3)",
+    "thumbnail": "",
+    "uuid": 346,
+    "premium": false
+  },
+  {
+    "category": "Games",
+    "embedLink": "https://res.cloudinary.com/learncube/video/upload/EU%20DEV/g1iobrii8yuwoescf7jk.mp4",
     "contentType": "video",
-    "title": "Spinning World",
+    "title": "How Many Triangles",
     "language": "",
     "description": "",
     "level": "",
     "subType": "Video (M4V or MP4)",
-    "thumbnail": "https://res.cloudinary.com/learncube/video/upload/v1634126545/LearnCube%20Online%20Classes/ncsnarxjj94oqz1j4um8.jpg",
-    "uuid": 246
+    "thumbnail": "https://res.cloudinary.com/learncube/video/upload/EU%20DEV/g1iobrii8yuwoescf7jk.jpg",
+    "uuid": 246,
+    "premium": true
   },
   {
     "category": "",
@@ -45,7 +61,8 @@
     "level": "",
     "subType": "Image",
     "thumbnail": "https://res.cloudinary.com/learncube/image/fetch/w_800,h_400,c_limit,f_jpg,q_auto/https://res.cloudinary.com/learncube/image/upload/v1634127692/LearnCube%20Online%20Classes/mmnpnltpw733809drapd.jpg",
-    "uuid": 579
+    "uuid": 579,
+    "premium": true
   },
   {
     "category": "Instructional",
@@ -57,7 +74,8 @@
     "level": "",
     "subType": "YouTube",
     "thumbnail": "https://res.cloudinary.com/learncube/image/youtube/w_400,h_250,c_fill,q_auto/zc_IYHeCGL8.jpg",
-    "uuid": 240
+    "uuid": 240,
+    "premium": false
   },
   {
     "category": "",
@@ -69,7 +87,8 @@
     "level": "",
     "subType": "MS Office (Word/Excel/PowerPoint)",
     "thumbnail": "https://res.cloudinary.com/learncube/image/fetch/w_800,h_400,c_limit,f_jpg,q_auto/https://res.cloudinary.com/learncube/image/upload/v1631709958/LearnCube/cwgowskamvs6hog6oqgi.pptx.pdf",
-    "uuid": 619
+    "uuid": 619,
+    "premium": true
   },
   {
     "category": "",
@@ -81,6 +100,7 @@
     "level": "",
     "subType": "Google Drive Link",
     "thumbnail": null,
-    "uuid": 619
+    "uuid": 621,
+    "premium": false
   }
 ]

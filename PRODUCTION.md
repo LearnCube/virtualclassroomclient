@@ -17,9 +17,15 @@
 
 [comment]: <> (  * [Participants]&#40;RESTAPI.md#participants&#41;)
 
+### [RECORDINGS](RECORDINGS.md)
+  * [Overview](RECORDINGS.md#overview)
+
+### [HOMEWORK](HOMEWORK.md)
+  * [Overview](HOMEWORK.md#overview)
+
 ### [Content Library](LIBRARY.md)
   * [Custom Content Library](LIBRARY.md#custom-content-library)
-	
+
 
 ### Production Use
 The Virtual Classroom Client is a single page Javascript web application, that can be seamlessly embedded in any HTML page and rendered in a browser.
@@ -71,20 +77,20 @@ Each event contains a detail object that has the timestamp of when the event occ
 
 There is a full list of available events below in the [API Reference](#api-reference)
 ```javascript
-const classroomElement = new VirtualClassroomClient(el, userConfig, classConfig)
+const classroom = new VirtualClassroomClient(el, userConfig, classConfig)
 
-classroomElement.addEventListener('enterClass', function (evt) {
+classroom.addEventListener('enterClass', function (evt) {
     const user = event.detail.user;
     const timestamp = event.detail.timestamp;
     console.log('User ' + user.username + 'entered the class at ' + timestamp)
 });
 
-classroomElement.addEventListener('exitClass', function (evt) {
+classroom.addEventListener('exitClass', function (evt) {
     // redirect to your own custom feedback form
     window.location.href = 'https://feedback.your-domain.com'
 });
 
-classroomElement.addEventListener('enterBreakoutRoom', function (evt) {
+classroom.addEventListener('enterBreakoutRoom', function (evt) {
     const breakoutRoomToken = event.detail.token;
     const breakoutRoomUser = event.detail.userid;
     console.log('Redirect ' + user.username + 'to a new url to enter the breakout room with the token ' + breakoutRoomToken)
@@ -95,8 +101,8 @@ classroomElement.addEventListener('enterBreakoutRoom', function (evt) {
 The Virtual Classroom Client also listens to custom events that you can trigger from your own JavaScript runtime. The events can be used to start or end a class.
 
 ```javascript
-const classroomElement = new VirtualClassroomClient(el, userConfig, classConfig)
-classroomElement.dispatchEvent(new CustomEvent('startClass', {'detail': {}}))
+const classroom = new VirtualClassroomClient(el, userConfig, classConfig)
+classroom.dispatchEvent(new CustomEvent('startClass', {'detail': {}}))
 ```
 
 <br/>
@@ -126,7 +132,7 @@ userConfig | object | yes | Contains user data to validate and connect to the cl
 classConfig | object | no | Contains specific options about the class |
 
 #### Returns
-The constructor returns the DOM element passed in as the first parameter. Event listeners can be attached to this element to handle custom events dispatched from the LearnCube Virtual Client.
+The constructor returns the DOM element passed in as the first parameter. Event listeners can be attached to this element to handle custom events dispatched from the LearnCube Virtual Classroom Client.
 
 <br/>
 <br/>
@@ -139,6 +145,7 @@ const userConfig = {
     'userid': {{PARTICIPANTID}},
     'username': {{PARTICIPANTNAME}},
     'avatar': {{PARTICIPANTTHUMBNAIL}},
+    'email': {{PARTICIPANTEMAIL}},
     'userType': {{'teacher'|'student'}},
     'validateUrl': {{auth.your-server.com}},
     'instantClass': {{true | false}}
@@ -150,10 +157,11 @@ publicKey | string | yes | n/a | The unique [public key](https://app.learncube.c
 token | string | yes | n/a  | We use this to create the classroom record in the LearnCube database, so it must be unique. You can create the classroom using our REST API, or if the classroom doesn't exist when you access it here, it will be created. |
 userid | string | yes | n/a  | This is the id of the participant that is entering the classroom. Each user must have a unique id for the real-time messaging and video conferencing to work properly. |
 username | string | no | ' ' | This is the display name of the participant that is entering the classroom. Although this is not strictly required, it is highly recommended for the teacher to differentiate whiteboard annotations and chat messages. |
+email | string | no | ' ' | This is the email of the participant that is entering the classroom. Used to send notifications in the Homework application. |
 avatar | string | no | ' ' | A URL of a thumbnail that will be used to represent the user in various places of the Virtual Classroom. |
 userType | string | no | student | Optional user type to overwite any settings for an already created class. |
 validateUrl | url | yes | n/a  | URL endpoint to do the validation on your server. |
-instantClass | boolean | yes | false | Creates a class if one does not already exist with the token provided. |
+instantClass | boolean | no | false | Creates a class if one does not already exist with the token provided. |
 
 <br/>
 
@@ -164,14 +172,16 @@ const classConfig = {
   'lesson_materials.enable_screenshare': true,
   'lesson_materials.enable_doc_cam': true,
   'lesson_materials.library_url': '/content-library/',
+  'lesson_materials.premium_url': '/content-library/premium/',
   'settings.embedded_whiteboard': true, 
   'settings.allow_skip_onboarding': true, 
   'settings.show_class_feedback': true,
-  'settings.class_control_button': true,
+  'settings.class_control_button': true, 
+  'settings.dashboardUrl': 'https://www.learncube.com/',
   'whiteboard.enable_math_tools': true,
   'whiteboard.can_edit_all': true, 
   'styles.logo': 'https://static.learncube.net/images/logos/crm/marije-test_live-online-classes_com/logo.png',
-  'styles.primary_color': '#fff000',
+  'styles.primary_color': '#fff000'
 }
 ```
 *** Important: These values all have permanent settings that are saved in your account. The front-end configuration is a way to overwrite the saved configuration.
@@ -181,24 +191,25 @@ Name | Type | Required | Default | Description
 lesson_materials.can_upload | boolean | no | Teacher: true Student false | Gives the user permission to upload content to the whiteboard during the class. |
 lesson_materials.enable_screenshare | boolean | no | Teacher: true Student false |  Gives the user permission to share their screen to the whiteboard during the class.|
 lesson_materials.enable_doc_cam | boolean | no | Teacher: true Student: false  | Gives the user permission to share an additional camera feed to the whiteboard during the class. (Green video server only) |
-lesson_materials.library_url | url | no | null  | A URL of an additional content library to use in the classroom. [More info](LIBRARY.md) |
+lesson_materials.library_url | url | no | null  | A URL of an additional content library to use in the classroom. [More info](LIBRARY.md#overview) |
+lesson_materials.premium_url | url | no | null  | A URL that returns signed or protected urls of protected whiteboard content. [More info](LIBRARY.md#premium-content) |
 settings.embedded_whiteboard | boolean | no | false | Overwrites the class type to render the class in whiteboard only mode. There is no video or chat components in this view. |
 settings.allow_skip_onboarding | boolean | no | false | Allows the user to skip the onboarding audio and video checks and tests. |
 settings.show_class_feedback | boolean | no | true | Shows the class feedback form at when the class is ended. |
 settings.class_control_button | boolean | no | false | Shows a button to start / end the class instead of the standard dropdown. |
+settings.dashboardUrl | url | no | / | The location the user will navigate to if they click the logo in the top left. |
 whiteboard.enable_math_tools | boolean | no | false | Enables maths tools to use on the whiteboard. |
 whiteboard.can_edit_all | boolean | no | true | Enables user to edit all annotations on the whiteboard.|
-styles.logo | string | no | null | Set the logo in the classroom.|
-styles.primary_color | string | no | null | Set the primary colour in the classroom.|
+styles.logo | string | no | null | Set the logo in the classroom.
+styles.primary_color | string | no | null | Set the primary colour in the classroom.
 
 #### Events
 Name | Triggered By | Example Payload | 
 -----|--------------|---------|
 enterClass | Entering a classroom | `{user: {userid: "12345G"}, timestamp: 1629448350461}` 
 exitClass | Exiting a classroom | `{user: {userid: "12345G"}, timestamp: 1629448350461}` 
-updateClassStatus | Exiting a classroom | `{classStatus: "in-progress", timestamp: 1629448350461}`  
+updateClassStatus | Updating the classroom status | `{classStatus: "in-progress", timestamp: 1629448350461}`  
 enterBreakoutRoom | Clicking link to enter a Breakout Room | `{token: 'breakout-token', userid: "12345G", timestamp: 1629449473109}`
-apiConfigError | Authentication denied when generating the JWT | `{code: 500, message: 'some error message', timestamp: 1637776005425}`
 
 #### Triggers
 Name | Example Payload | 

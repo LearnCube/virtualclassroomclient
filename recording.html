@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>LearnCube Api Integration - Recording</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" type="text/css" href="https://static.learncube.net/client/recordings.css">
+    <script type="text/javascript" src="https://static.learncube.net/client/recordings.js"></script>
+</head>
+
+<body>
+    <div id="virtual-classroom-recordings"></div>
+    <script type="text/javascript">
+
+        const recordings = new VcRecording('#virtual-classroom-recordings',
+            {
+                'token': {{UNIQUE ROOM TOKEN HERE}}, // Eg. "first-test-room-token"
+                'userid': {{FAKE USER ID HERE}}, // Eg. "12345G"
+                'username': {{FAKE USERNAME HERE}}, // Eg. "Test Widget Teacher",
+                'publicKey': {{YOUR PUBLIC KEY HERE}},
+                'validateUrl': '/get-valid-token/',
+            }
+        )
+
+
+            
+    </script> 
+</body>
+
+</html> 

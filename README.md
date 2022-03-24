@@ -17,11 +17,18 @@
 
 [comment]: <> (  * [Participants]&#40;RESTAPI.md#participants&#41;)
 
+### [RECORDINGS](RECORDINGS.md)
+  * [Overview](RECORDINGS.md#overview)
+
+### [HOMEWORK](HOMEWORK.md)
+  * [Overview](HOMEWORK.md#overview)
+
 ### [Content Library](LIBRARY.md)
   * [Custom Content Library](LIBRARY.md#custom-content-library)
 
+
 ### Overview
-The LearnCube Virtual Classroom is is an online learning environment that allows teachers and students to communicate, interact, collaborate through our video conferencing tool, chat box and interactive whiteboard. You can access all your past classes, upload and store class content, create breakout rooms, record your lessons and conduct classes in Conversation or Whiteboard-Only mode. 
+The LearnCube Virtual Classroom is an online learning environment that allows teachers and students to communicate, interact, collaborate through our video conferencing tool, chat box and interactive whiteboard. You can access all your past classes, upload and store class content, create breakout rooms, record your lessons and conduct classes in Conversation or Whiteboard-Only mode. 
 
 <img src="https://www.learncube.com/images/blog_images/LearnCube-Update-July-2019.png">
 
@@ -56,7 +63,7 @@ LearnCube's Virtual Classroom is only available to LearnCube customers with API 
   privateKey={privatekeyfromyouraccount}
 
   # LearnCube user username
-  user_name={usernamefromyouraccount}
+  username={usernamefromyouraccount}
 
   # LearnCube user id
   user_id={useridfromyouraccount}
@@ -66,13 +73,13 @@ LearnCube's Virtual Classroom is only available to LearnCube customers with API 
   ```
   ***Important: This must match the user data we have stored for the LearnCube account holder.***
 
-- Replace the Classroom participant data in the `index.html` file with user data of a classroom participants. 
+- Replace the Classroom participant data in the `index.html` file with user data of a classroom participant. 
 
   ***Note: This does not have to match the user data in your `.env` file. All your classroom participants, teachers, students and admins, will access the classroom using your LearnCube account details.***
   ```html
       <div id="virtual-classroom-client"></div>
-      <link rel="stylesheet" type="text/css" href="https://static.learncube.net/client/virtualclassroom.api.0.2.4.css">
-      <script type="text/javascript" src="https://static.learncube.net/client/virtualclassroom.api.0.2.4.js"></script>
+      <link rel="stylesheet" type="text/css" href="https://static.learncube.net/client/virtualclassroom.css">
+      <script type="text/javascript" src="https://static.learncube.net/client/virtualclassroom.js"></script>
       <script type="text/javascript">
           const classroom = new VirtualClassroom('#virtual-classroom-client',
               {
@@ -97,3 +104,4 @@ LearnCube's Virtual Classroom is only available to LearnCube customers with API 
 <br/>
 
 [Troubleshooting authentication issues](AUTH.md#troubleshooting)  
+[Training Videos](https://www.youtube.com/playlist?list=PLrlg2DdRh_t0k-VHU5R-u5GorWysBNUwp)  
