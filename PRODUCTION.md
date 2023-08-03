@@ -148,20 +148,22 @@ const userConfig = {
     'email': {{PARTICIPANTEMAIL}},
     'userType': {{'teacher'|'student'}},
     'validateUrl': {{auth.your-server.com}},
-    'instantClass': {{true | false}}
+    'instantClass': {{true | false}},
+    'customTitle': {{'human readable class identifier}}
 }
 ```
-Name | Type | Required | Default  | Description
------|---------|-----|---------|---|
-publicKey | string | yes | n/a | The unique [public key](https://app.learncube.com/app/dashboard/#api) that is associated with your LearnCube account. This is how we identify you and what we use for authenticating API calls.|
-token | string | yes | n/a  | We use this to create the classroom record in the LearnCube database, so it must be unique. You can create the classroom using our REST API, or if the classroom doesn't exist when you access it here, it will be created. |
-userid | string | yes | n/a  | This is the id of the participant that is entering the classroom. Each user must have a unique id for the real-time messaging and video conferencing to work properly. |
-username | string | no | ' ' | This is the display name of the participant that is entering the classroom. Although this is not strictly required, it is highly recommended for the teacher to differentiate whiteboard annotations and chat messages. |
-email | string | no | ' ' | This is the email of the participant that is entering the classroom. Used to send notifications in the Homework application. |
-avatar | string | no | ' ' | A URL of a thumbnail that will be used to represent the user in various places of the Virtual Classroom. |
-userType | string | no | student | Optional user type to overwite any settings for an already created class. |
-validateUrl | url | yes | n/a  | URL endpoint to do the validation on your server. |
-instantClass | boolean | no | false | Creates a class if one does not already exist with the token provided. |
+Name | Type | Required | Default     | Description                                                                                                                                                                                                                 
+-----|---------|-----|-------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+publicKey | string | yes | n/a         | The unique [public key](https://app.learncube.com/app/dashboard/#api) that is associated with your LearnCube account. This is how we identify you and what we use for authenticating API calls.                             |
+token | string | yes | n/a         | We use this to create the classroom record in the LearnCube database, so it must be unique. You can create the classroom using our REST API, or if the classroom doesn't exist when you access it here, it will be created. |
+userid | string | yes | n/a         | This is the id of the participant that is entering the classroom. Each user must have a unique id for the real-time messaging and video conferencing to work properly.                                                      |
+username | string | no | ' '         | This is the display name of the participant that is entering the classroom. Although this is not strictly required, it is highly recommended for the teacher to differentiate whiteboard annotations and chat messages.     |
+email | string | no | ' '         | This is the email of the participant that is entering the classroom. Used to send notifications in the Homework application.                                                                                                |
+avatar | string | no | ' '         | A URL of a thumbnail that will be used to represent the user in various places of the Virtual Classroom.                                                                                                                    |
+userType | string | no | student     | Optional user type to overwite any settings for an already created class.                                                                                                                                                   |
+validateUrl | url | yes | n/a         | URL endpoint to do the validation on your server.                                                                                                                                                                           |
+instantClass | boolean | no | false       | Creates a class if one does not already exist with the token provided.                                                                                                                                                      |
+customTitle | string | no | 'Api Class' | Creates a custom title for the class. Helps with searching through past classes                                                                                                                                             |
 
 <br/>
 
