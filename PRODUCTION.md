@@ -149,7 +149,7 @@ const userConfig = {
     'userType': {{'teacher'|'student'}},
     'validateUrl': {{auth.your-server.com}},
     'instantClass': {{true | false}},
-    'customTitle': {{'human readable class identifier}}
+    'customTitle': {{'human readable class identifier'}}
 }
 ```
 Name | Type | Required | Default     | Description                                                                                                                                                                                                                 
