@@ -4,6 +4,7 @@
   * [Quickstart](README.md#quickstart)
 
 ### [Production Use](PRODUCTION.md)
+  * [Versions](PRODUCTION.md#versions)
   * [Routes](PRODUCTION.md#routes)
   * [Browser Support](PRODUCTION.md#browser)
   * [Authentication](AUTH.md#authentication)
@@ -29,6 +30,24 @@
 
 ### Production Use
 The Virtual Classroom Client is a single page Javascript web application, that can be seamlessly embedded in any HTML page and rendered in a browser.
+
+### Versions
+The most up-to-date production version of the LearnCube Virtual Classroom Client files will always be accessible at: 
+```html
+  <!-- Virtual Classroom -->  
+  <link rel="stylesheet" type="text/css" href="https://static.learncube.net/client/virtualclassroom.css">
+  <script type="text/javascript" src="https://static.learncube.net/client/virtualclassroom.js"></script>
+```      
+
+From time-to-time, to ensure we always have backwards compatibility, advance testing of beta features will be made available to users through versioned files. Eg:
+```html
+  <!-- Virtual Classroom With Extra Recordin Options -->  
+  <link rel="stylesheet" type="text/css" href="https://static.learncube.net/client/virtualclassroom.1.2.0css">
+  <script type="text/javascript" src="https://static.learncube.net/client/virtualclassroom.1.2.0js"></script>
+```
+Once features have passed our internal QA and testing processes, they will be merged into the main branch and released to general audience through the non-versioned files. 
+
+***To ensure you will always have the latest classroom features in the most stable environment possible, the unversioned files should be used in production.***
 
 ### Authentication
 All API calls from the Virtual Classroom Client must be authenticated using JSON Web Tokens. For more information on this see [Authentication](AUTH.md#authentication)
@@ -95,6 +114,14 @@ classroom.addEventListener('enterBreakoutRoom', function (evt) {
     const breakoutRoomUser = event.detail.userid;
     console.log('Redirect ' + user.username + 'to a new url to enter the breakout room with the token ' + breakoutRoomToken)
 });
+
+classroom.addEventListener('whiteboardAction', function (evt) {
+    console.log('whiteboardAction', evt.detail)
+});	
+
+classroom.addEventListener('apiConfigError', function (evt) {
+    console.log('apiConfigError', evt)
+})
 ```
 
 ### Triggers
@@ -212,6 +239,8 @@ enterClass | Entering a classroom | `{user: {userid: "12345G"}, timestamp: 16294
 exitClass | Exiting a classroom | `{user: {userid: "12345G"}, timestamp: 1629448350461}` 
 updateClassStatus | Updating the classroom status | `{classStatus: "in-progress", timestamp: 1629448350461}`  
 enterBreakoutRoom | Clicking link to enter a Breakout Room | `{token: 'breakout-token', userid: "12345G", timestamp: 1629449473109}`
+apiConfigError | Getting an error when trying to get the class config from the server | `{"code": 404,  "message": "Event does not exist. Please create it using the REST API or turn on instant class.", "timestamp": 1672323226121}`
+whiteboardAction | Any whiteboard action | `{ "superAction": "draw", "subAction": "pencil", "operation": "add", "objectId": "e1a20928c22bf", "tabId": "tab_9a329b30-8773-11ed-b54a-7791cd81cc35", "user": {"id": "23837", "username": "Test teacher"}, "timestamp": 1672322777000}`
 
 #### Triggers
 Name | Example Payload | 
