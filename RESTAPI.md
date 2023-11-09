@@ -43,16 +43,16 @@ Classrooms can be retrieved in a list or individually by providing the LearnCube
 
 ```curl
 # Fetch classroom list
-GET https://api.learncube.com/api/virtual-classroom/classrooms/
+GET https://app.learncube.com/api/virtual-classroom/classrooms/
 ```
 
 #### Example
 ```json 
-//GET https://api.learncube.com/api/virtual-classroom/classrooms/
+//GET https://app.learncube.com/api/virtual-classroom/classrooms/
 
 {
   "count": 101,
-  "next": "https://api.learncube.com/api/virtual-classroom/classrooms/?page=2",
+  "next": "https://app.learncube.com/api/virtual-classroom/classrooms/?page=2",
   "previous": null,
   "results": [
     {
@@ -78,7 +78,7 @@ GET https://api.learncube.com/api/virtual-classroom/classrooms/
 The Classroom list can be filtered by providing the following query parameters.
 
 ```curl
-GET https://api.learncube.com/api/virtual-classroom/classrooms/?start_before=2021-07-20T16:02:15Z&page=3
+GET https://app.learncube.com/api/virtual-classroom/classrooms/?start_before=2021-07-20T16:02:15Z&page=3
 ```
 
 #### Options
@@ -108,14 +108,14 @@ An individual Classroom can be fetched with a GET request to the same URL root w
 
 ```
 # Fetch single classroom
-GET https://api.learncube.com/api/virtual-classroom/classrooms/{uuid}/
+GET https://app.learncube.com/api/virtual-classroom/classrooms/{uuid}/
 ```
 
 #### Update Classroom
 A Classroom can be updated with a PUT request with the unique LearnCube id
 
 ```
-PUT https://api.learncube.com/api/virtual-classroom/classrooms/{uuid}/
+PUT https://app.learncube.com/api/virtual-classroom/classrooms/{uuid}/
 {
   "room_token": "august-13-1",
   "description": "English Course 1: Class 3"
@@ -143,7 +143,7 @@ record_class | boolean | no | false | True if the teacher has attended the class
 #### Destroy Classroom
 A Classroom can be destroyed with a DELETE request with the unique LearnCube id.
 ```
-DELETE https://api.learncube.com/api/virtual-classroom/classrooms/{uuid}/
+DELETE https://app.learncube.com/api/virtual-classroom/classrooms/{uuid}/
 ```
 
 <br />
@@ -189,7 +189,7 @@ Participants can be retrieved in a list at the following endpoint.
 
 ```curl
 # Fetch participant list
-GET https://api.learncube.com/api/virtual-classroom/participants/
+GET https://app.learncube.com/api/virtual-classroom/participants/
 ```
 
 #### Example
@@ -223,7 +223,7 @@ GET https://api.learncube.com/api/virtual-classroom/participants/
 The Participant list can be filtered by providing one or more query parameters.
 
 ```curl
-GET https://api.learncube.com/api/virtual-classroom/participants/?room_token=vc-client-sample-1&user_role=student
+GET https://app.learncube.com/api/virtual-classroom/participants/?room_token=vc-client-sample-1&user_role=student
 ```
 
 #### Options
