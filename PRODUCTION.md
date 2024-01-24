@@ -49,6 +49,12 @@ Add a div with Id "virtual-classroom-client"
 ```html
  <div id="virtual-classroom-client"></div>
 ```
+Add css to your html file
+
+```html
+
+<link rel="stylesheet" type="text/css" href="https://static.learncube.net/client/virtualclassroom.css">
+```
 
 Initialize the Virtual Classroom
 
