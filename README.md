@@ -4,6 +4,7 @@
   * [Quickstart](README.md#quickstart)
 
 ### [Production Use](PRODUCTION.md)
+  * [NPM Package](PRODUCTION.md#npm)
   * [Routes](PRODUCTION.md#routes)
   * [Browser Support](PRODUCTION.md#browser)
   * [Authentication](AUTH.md#authentication)
