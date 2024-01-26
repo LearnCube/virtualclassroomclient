@@ -237,7 +237,7 @@ element to handle custom events dispatched from the LearnCube Virtual Classroom 
 
 #### User Config
 
-```javascript
+```json
 {
    "publicKey":{
       {
