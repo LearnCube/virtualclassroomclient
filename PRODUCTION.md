@@ -238,83 +238,57 @@ element to handle custom events dispatched from the LearnCube Virtual Classroom 
 #### User Config
 
 ```javascript
-const userConfig = {
-    'publicKey': {
 {
-    PUBLICKEY
-}
-},
-'token'
-:
-{
-    {
-        ROOMTOKEN
-    }
-}
-,
-'userid'
-:
-{
-    {
-        PARTICIPANTID
-    }
-}
-,
-'username'
-:
-{
-    {
-        PARTICIPANTNAME
-    }
-}
-,
-'avatar'
-:
-{
-    {
-        PARTICIPANTTHUMBNAIL
-    }
-}
-,
-'email'
-:
-{
-    {
-        PARTICIPANTEMAIL
-    }
-}
-,
-'userType'
-:
-{
-    {
-        'teacher' | 'student'
-    }
-}
-,
-'validateUrl'
-:
-{
-    {
-        auth.your - server.com
-    }
-}
-,
-'instantClass'
-:
-{
-    {
-        true | false
-    }
-}
-,
-'customTitle'
-:
-{
-    {
-        'human readable class identifier'
-    }
-}
+   "publicKey":{
+      {
+         "PUBLICKEY"
+      }
+   },
+   "token":{
+      {
+         "ROOMTOKEN"
+      }
+   },
+   "userid":{
+      {
+         "PARTICIPANTID"
+      }
+   },
+   "username":{
+      {
+         "PARTICIPANTNAME"
+      }
+   },
+   "avatar":{
+      {
+         "PARTICIPANTTHUMBNAIL"
+      }
+   },
+   "email":{
+      {
+         "PARTICIPANTEMAIL"
+      }
+   },
+   "userType":{
+      {
+         "teacher""|""student"
+      }
+   },
+   "validateUrl":{
+      {
+         "auth.your - server.com"
+      }
+   },
+   "instantClass":{
+      {
+         "true | false"
+      }
+   },
+   "customTitle":{
+      {
+         "human readable class identifier"
+      }
+   }
 }
 ```
 
