@@ -38,41 +38,6 @@
 The Virtual Classroom Client is a single page Javascript web application, that can be seamlessly embedded in any HTML
 page and rendered in a browser.
 
-### NPM
-
-[ learncube-vc-sdk NPM Package]([LIBRARY.md#custom-content-library](https://www.npmjs.com/package/learncube-vc-sdk))
-
-```npm i learncube-vc-sdk```
-
-Add a div with Id "virtual-classroom-client"
-
-```html
- <div id="virtual-classroom-client"></div>
-```
-Add css to your html file
-
-```html
-
-<link rel="stylesheet" type="text/css" href="https://static.learncube.net/client/virtualclassroom.css">
-```
-
-Initialize the Virtual Classroom
-
-```js
-import virtualClassroom from 'learncube-vc-sdk'
-
-const VirtualClassroom = virtualClassroom()
-
-const classroom = new VirtualClassroom('#virtual-classroom-client',
-            {
-                'token': {{UNIQUE ROOM TOKEN HERE}}, // Eg. first-test-room-token
-                'userid': {{FAKE USER ID HERE}}, // Eg. 12345G
-                'username': {{FAKE USERNAME HERE}}, // Eg. 'Test Widget Teacher',
-                'publicKey': {{YOUR PUBLIC KEY HERE}}',
-                'userType': 'teacher',
-                'validateUrl': '/get-valid-token/'
-            });
-```
 ### Versions
 The most up-to-date production version of the LearnCube Virtual Classroom Client files will always be accessible at:
 ```html
