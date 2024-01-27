@@ -6,7 +6,6 @@
 
 ### [Production Use](PRODUCTION.md)
 
-* [NPM Package](PRODUCTION.md#npm)
 * [Versions](PRODUCTION.md#versions)
 * [Routes](PRODUCTION.md#routes)
 * [Browser Support](PRODUCTION.md#browser)
