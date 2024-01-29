@@ -95,7 +95,7 @@ const classConfig = {
     'lesson_materials.premium_url': 'http://localhost:3000/content-library/premium/'
 }
 
-const classroom = new VirtualClassroomClient(el, userConfig, classConfig)
+const classroom = new VirtualClassroom(el, userConfig, classConfig)
 ```
 
 ### Important

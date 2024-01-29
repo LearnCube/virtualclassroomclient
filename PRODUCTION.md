@@ -119,7 +119,7 @@ event.
 There is a full list of available events below in the [API Reference](#api-reference)
 
 ```javascript
-const classroom = new VirtualClassroomClient(el, userConfig, classConfig)
+const classroom = new VirtualClassroom(el, userConfig, classConfig)
 
 classroom.addEventListener('enterClass', function (evt) {
     const user = event.detail.user;
@@ -153,7 +153,7 @@ The Virtual Classroom Client also listens to custom events that you can trigger 
 events can be used to start or end a class.
 
 ```javascript
-const classroom = new VirtualClassroomClient(el, userConfig, classConfig)
+const classroom = new VirtualClassroom(el, userConfig, classConfig)
 classroom.dispatchEvent(new CustomEvent('startClass', {'detail': {}}))
 ```
 
@@ -180,7 +180,7 @@ breakout room. You must handle this event in order to exit one room and enter an
 #### Constructor
 
 ```javascript
-const classroom = new VirtualClassroomClient(el, userConfig, classConfig)
+const classroom = new VirtualClassroom(el, userConfig, classConfig)
 ```
 
 #### Parameters
@@ -200,59 +200,18 @@ element to handle custom events dispatched from the LearnCube Virtual Classroom 
 <br/>
 
 #### User Config
-
-```json
-{
-   "publicKey":{
-      {
-         "PUBLICKEY"
-      }
-   },
-   "token":{
-      {
-         "ROOMTOKEN"
-      }
-   },
-   "userid":{
-      {
-         "PARTICIPANTID"
-      }
-   },
-   "username":{
-      {
-         "PARTICIPANTNAME"
-      }
-   },
-   "avatar":{
-      {
-         "PARTICIPANTTHUMBNAIL"
-      }
-   },
-   "email":{
-      {
-         "PARTICIPANTEMAIL"
-      }
-   },
-   "userType":{
-      {
-         "teacher""|""student"
-      }
-   },
-   "validateUrl":{
-      {
-         "auth.your - server.com"
-      }
-   },
-   "instantClass":{
-      {
-         "true | false"
-      }
-   },
-   "customTitle":{
-      {
-         "human readable class identifier"
-      }
-   }
+```javascript
+const userConfig = {
+    'publicKey': {{PUBLICKEY}},
+    'token': {{ROOMTOKEN}},
+    'userid': {{PARTICIPANTID}},
+    'username': {{PARTICIPANTNAME}},
+    'avatar': {{PARTICIPANTTHUMBNAIL}},
+    'email': {{PARTICIPANTEMAIL}},
+    'userType': {{'teacher'|'student'}},
+    'validateUrl': {{auth.your-server.com}},
+    'instantClass': {{true | false}},
+    'customTitle': {{'human readable class identifier'}}
 }
 ```
 
@@ -281,7 +240,6 @@ const classConfig = {
     'lesson_materials.library_url': '/content-library/',
     'lesson_materials.premium_url': '/content-library/premium/',
     'settings.embedded_whiteboard': true,
-    'settings.allow_skip_onboarding': true,
     'settings.show_class_feedback': true,
     'settings.class_control_button': true,
     'settings.dashboardUrl': 'https://www.learncube.com/',
