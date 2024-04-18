@@ -261,7 +261,6 @@ way to overwrite the saved configuration.
  lesson_materials.library_url        | url     | no       | null                         | A URL of an additional content library to use in the classroom. [More info](LIBRARY.md#overview)                           |
  lesson_materials.premium_url        | url     | no       | null                         | A URL that returns signed or protected urls of protected whiteboard content. [More info](LIBRARY.md#premium-content)       |
  settings.embedded_whiteboard        | boolean | no       | false                        | Overwrites the class type to render the class in whiteboard only mode. There is no video or chat components in this view.  |
- settings.allow_skip_onboarding      | boolean | no       | false                        | Allows the user to skip the onboarding audio and video checks and tests.                                                   |
  settings.show_class_feedback        | boolean | no       | true                         | Shows the class feedback form at when the class is ended.                                                                  |
  settings.class_control_button       | boolean | no       | false                        | Shows a button to start / end the class instead of the standard dropdown.                                                  |
  settings.dashboardUrl               | url     | no       | /                            | The location the user will navigate to if they click the logo in the top left.                                             |
