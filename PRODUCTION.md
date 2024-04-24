@@ -122,8 +122,8 @@ There is a full list of available events below in the [API Reference](#api-refer
 const classroom = new VirtualClassroom(el, userConfig, classConfig)
 
 classroom.addEventListener('enterClass', function (evt) {
-    const user = event.detail.user;
-    const timestamp = event.detail.timestamp;
+    const user = evt.detail.user;
+    const timestamp = evt.detail.timestamp;
     console.log('User ' + user.username + 'entered the class at ' + timestamp)
 });
 
@@ -133,8 +133,8 @@ classroom.addEventListener('exitClass', function (evt) {
 });
 
 classroom.addEventListener('enterBreakoutRoom', function (evt) {
-    const breakoutRoomToken = event.detail.token;
-    const breakoutRoomUser = event.detail.userid;
+    const breakoutRoomToken = evt.detail.token;
+    const breakoutRoomUser = evt.detail.userid;
     console.log('Redirect ' + user.username + 'to a new url to enter the breakout room with the token ' + breakoutRoomToken)
 });
 
