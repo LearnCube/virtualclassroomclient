@@ -243,6 +243,7 @@ const classConfig = {
     'settings.show_class_feedback': true,
     'settings.class_control_button': true,
     'settings.dashboardUrl': 'https://www.learncube.com/',
+    'settings.enter_when_admitted': false,
     'whiteboard.enable_math_tools': true,
     'whiteboard.can_edit_all': true,
     'styles.logo': 'https://static.learncube.net/images/logos/crm/marije-test_live-online-classes_com/logo.png',
@@ -253,21 +254,22 @@ const classConfig = {
 *** Important: These values all have permanent settings that are saved in your account. The front-end configuration is a
 way to overwrite the saved configuration.
 
- Name                                | Type    | Required | Default                      | Description                                                                                                                
--------------------------------------|---------|----------|------------------------------|----------------------------------------------------------------------------------------------------------------------------|
- lesson_materials.can_upload         | boolean | no       | Teacher: true Student false  | Gives the user permission to upload content to the whiteboard during the class.                                            |
- lesson_materials.enable_screenshare | boolean | no       | Teacher: true Student false  | Gives the user permission to share their screen to the whiteboard during the class.                                        |
- lesson_materials.enable_doc_cam     | boolean | no       | Teacher: true Student: false | Gives the user permission to share an additional camera feed to the whiteboard during the class. (Green video server only) |
- lesson_materials.library_url        | url     | no       | null                         | A URL of an additional content library to use in the classroom. [More info](LIBRARY.md#overview)                           |
- lesson_materials.premium_url        | url     | no       | null                         | A URL that returns signed or protected urls of protected whiteboard content. [More info](LIBRARY.md#premium-content)       |
- settings.embedded_whiteboard        | boolean | no       | false                        | Overwrites the class type to render the class in whiteboard only mode. There is no video or chat components in this view.  |
- settings.show_class_feedback        | boolean | no       | true                         | Shows the class feedback form at when the class is ended.                                                                  |
- settings.class_control_button       | boolean | no       | false                        | Shows a button to start / end the class instead of the standard dropdown.                                                  |
- settings.dashboardUrl               | url     | no       | /                            | The location the user will navigate to if they click the logo in the top left.                                             |
- whiteboard.enable_math_tools        | boolean | no       | false                        | Enables maths tools to use on the whiteboard.                                                                              |
- whiteboard.can_edit_all             | boolean | no       | true                         | Enables user to edit all annotations on the whiteboard.                                                                    |
- styles.logo                         | string  | no       | null                         | Set the logo in the classroom.                                                                                             
- styles.primary_color                | string  | no       | null                         | Set the primary colour in the classroom.                                                                                   
+ Name                                | Type    | Required | Default                      | Description                                                                                                                                 
+-------------------------------------|---------|----------|------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------|
+ lesson_materials.can_upload         | boolean | no       | Teacher: true Student false  | Gives the user permission to upload content to the whiteboard during the class.                                                             |
+ lesson_materials.enable_screenshare | boolean | no       | Teacher: true Student false  | Gives the user permission to share their screen to the whiteboard during the class.                                                         |
+ lesson_materials.enable_doc_cam     | boolean | no       | Teacher: true Student: false | Gives the user permission to share an additional camera feed to the whiteboard during the class. (Green video server only)                  |
+ lesson_materials.library_url        | url     | no       | null                         | A URL of an additional content library to use in the classroom. [More info](LIBRARY.md#overview)                                            |
+ lesson_materials.premium_url        | url     | no       | null                         | A URL that returns signed or protected urls of protected whiteboard content. [More info](LIBRARY.md#premium-content)                        |
+ settings.embedded_whiteboard        | boolean | no       | false                        | Overwrites the class type to render the class in whiteboard only mode. There is no video or chat components in this view.                   |
+ settings.show_class_feedback        | boolean | no       | true                         | Shows the class feedback form at when the class is ended.                                                                                   |
+ settings.class_control_button       | boolean | no       | false                        | Shows a button to start / end the class instead of the standard dropdown.                                                                   |
+ settings.dashboardUrl               | url     | no       | /                            | The location the user will navigate to if they click the logo in the top left.                                                              |
+ settings.enter_when_admitted        | boolean | no       | false                        | Setting to true forces all students into a waiting room by default. The teacher has to manually admit each student to the class one by one. |
+ whiteboard.enable_math_tools        | boolean | no       | false                        | Enables maths tools to use on the whiteboard.                                                                                               |
+ whiteboard.can_edit_all             | boolean | no       | true                         | Enables user to edit all annotations on the whiteboard.                                                                                     |
+ styles.logo                         | string  | no       | null                         | Set the logo in the classroom.                                                                                                              
+ styles.primary_color                | string  | no       | null                         | Set the primary colour in the classroom.                                                                                                    
 
 #### Events
 
